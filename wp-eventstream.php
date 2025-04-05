@@ -18,6 +18,6 @@ define('WP_EVENTSTREAM_PLUGIN_BASENAME',       plugin_basename(WP_EVENTSTREAM_FI
 define('WP_EVENTSTREAM_PLUGIN_NAME',           trim(dirname(WP_EVENTSTREAM_PLUGIN_BASENAME), '/'));
 define('WP_EVENTSTREAM_TEXT_DOMAIN',           WP_EVENTSTREAM_PLUGIN_NAME);
 define('WP_EVENTSTREAM_PATH',                  realpath(plugin_dir_path(WP_EVENTSTREAM_FILE)) . '/');
-define('WP_EVENTSTREAM_INC_PATH',              realpath(WP_EVENTSTREAM_PATH . 'inc/') . '/');
+define('WP_EVENTSTREAM_INC_PATH',              realpath(WP_EVENTSTREAM_PATH . 'includes/') . '/');
 
-require_once WP_EVENTSTREAM_PATH . 'bootstrap.php';
+require_once WP_EVENTSTREAM_INC_PATH . 'bootstrap.php';
