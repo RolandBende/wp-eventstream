@@ -10,18 +10,14 @@ Text Domain: wp-eventstream
 Version: 1.0.0
 */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-define( 'WPEVENTSTREAM_VERSION', '1.0.0' );
+define('WP_EVENTSTREAM_VERSION',               '1.0.0');
+define('WP_EVENTSTREAM_FILE',                  __FILE__);
+define('WP_EVENTSTREAM_PLUGIN_BASENAME',       plugin_basename(WP_EVENTSTREAM_FILE));
+define('WP_EVENTSTREAM_PLUGIN_NAME',           trim(dirname(WP_EVENTSTREAM_PLUGIN_BASENAME), '/'));
+define('WP_EVENTSTREAM_TEXT_DOMAIN',           WP_EVENTSTREAM_PLUGIN_NAME);
+define('WP_EVENTSTREAM_PATH',                  realpath(plugin_dir_path(WP_EVENTSTREAM_FILE)) . '/');
+define('WP_EVENTSTREAM_INC_PATH',              realpath(WP_EVENTSTREAM_PATH . 'inc/') . '/');
 
-define( 'WPEVENTSTREAM_TEXT_DOMAIN', 'wp-eventstream' );
-
-define( 'WPEVENTSTREAM_PLUGIN', __FILE__ );
-
-define( 'WPEVENTSTREAM_PLUGIN_BASENAME', plugin_basename( WPEVENTSTREAM_PLUGIN ) );
-
-define( 'WPEVENTSTREAM_PLUGIN_NAME', trim( dirname( WPEVENTSTREAM_PLUGIN_BASENAME ), '/' ) );
-
-define( 'WPEVENTSTREAM_PLUGIN_DIR', untrailingslashit( dirname( WPEVENTSTREAM_PLUGIN ) ) );
-
-require_once WPEVENTSTREAM_PLUGIN_DIR . '/bootstrap.php';
+require_once WP_EVENTSTREAM_PATH . 'bootstrap.php';
